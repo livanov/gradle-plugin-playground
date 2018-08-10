@@ -1,0 +1,25 @@
+plugins {
+    id "groovy"
+    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
+    id "maven-publish"
+    id "java-gradle-plugin"
+}
+
+gradlePlugin {
+    plugins {
+        myPlugin {
+            id = "com.livanov.plugins.http-calling-plugin"
+            implementationClass = "com.livanov.plugins.HttpCallingPlugin"
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    testCompile "junit:junit:4.12"
+    testCompile "com.github.tomakehurst:wiremock:2.18.0"
+}
